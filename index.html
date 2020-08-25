@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<title>WEATHER</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<body onload="initialize();">
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+<!-- Modal -->
+<div id="model" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-theme-l1"> 
+        <span onclick="document.getElementById('model').style.display='none'"
+        class="w3-button w3-display-topright">×</span>
+        <h4>You pointed on..<i class="fa fa-smile-o"></i></h4>
+      </header>
+      <div class="w3-padding">
+        <h5 id="city1" style="color:blue;"></h5>
+        <h3 id="temp1" style="color:blue;"></h3>
+        <h5 id="description1" style="color:blue;"></h5>
+        <h5 id="aqi1" style="color:blue;"></h5>
+      </div>
+      <footer class="w3-container w3-theme-l1">
+      </footer>
+    </div>
+</div>
+
+<div class="w3-center">
+  	<h4 color="red">WEATHER DETAILS</h4>
+  	<h3 id="status"></h3>
+  	<h4 id="city"></h4>
+  	<a id = "map-link" target="_blank"></a>
+  	<h1 class="w3-xxxlarge w3-animate-bottom" id="temperature" onclick="switchUnits(); return false;"></h1>
+	<h4 id="description"></h4>
+  <h4 id="aqi"></h4>
+	<div class="w3-padding-32">
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey"  id="find-me" onclick="geoFindMe();" >GET Locatiion</button>
+  	</div>
+</div>
+</header>
+<div id ="map" style="height: 700px" "width: 253px" ></div>
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script src="code.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfuB8gBluJl9-qeQB55e2K8fbr4yq4rLE&libraries=places&callback=initialize" async defer></script>
+
+</body>
+</html>
